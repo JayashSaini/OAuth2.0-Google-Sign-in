@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>profile</title>
+  </head>
+  <body>
+    <!-- NavBar -->
+    <nav>
+      <a href="/user/">Home</a>
+      <a href="/user/profile">Register</a>
+
+      <% if (!user) { %>
+      <a href="/user/login">Login</a>
+      <% } else { %>
+      <a href="/user/logout">Logout</a>
+      <% } %>
+    </nav>
+
+    <!-- Main part -->
+    <img src="<%=user.thumbnail%>" />
+    <h1>Welcome to profile, <%= user ? user.username : 'Guest' %></h1>
+  </body>
+</html>
